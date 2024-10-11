@@ -5,14 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
 @Table(name = "product_category")
 // estudar porque usar getter e setter aqui e não @Data
 @Getter
 @Setter
-public class ProductCategoryEntity {
+public class ProductCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +22,5 @@ public class ProductCategoryEntity {
     private String categoryName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<ProductEntity> products;
+    private Set<Product> products;
 }

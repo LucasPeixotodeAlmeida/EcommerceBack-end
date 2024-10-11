@@ -1,7 +1,7 @@
 package com.lucas.ecommerce.config;
 
-import com.lucas.ecommerce.entities.ProductCategoryEntity;
-import com.lucas.ecommerce.entities.ProductEntity;
+import com.lucas.ecommerce.entities.ProductCategory;
+import com.lucas.ecommerce.entities.Product;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -19,13 +19,13 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         //disable HTTP methods for Product: PUT, POST and DELETE
         config.getExposureConfiguration()
-                .forDomainType(ProductEntity.class)
+                .forDomainType(Product.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
         //disable HTTP methods for ProductCategory: PUT, POST and DELETE
         config.getExposureConfiguration()
-                .forDomainType(ProductCategoryEntity.class)
+                .forDomainType(ProductCategory.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
     }
