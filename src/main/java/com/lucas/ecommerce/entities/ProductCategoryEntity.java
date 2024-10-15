@@ -11,7 +11,7 @@ import java.util.Set;
 // estudar porque usar getter e setter aqui e não @Data
 @Getter
 @Setter
-public class ProductCategory {
+public class ProductCategoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +22,5 @@ public class ProductCategory {
     private String categoryName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<Product> products;
+    private Set<ProductEntity> products;
 }

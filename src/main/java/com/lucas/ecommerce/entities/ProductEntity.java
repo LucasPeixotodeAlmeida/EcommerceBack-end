@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @Table(name = "product")
 @Data
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
-    private ProductCategory category;
+    private ProductCategoryEntity category;
 
     @Column( name = "sku")
     private String sku;
